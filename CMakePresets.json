@@ -1,0 +1,66 @@
+{
+  "version": 8,
+  "cmakeMinimumRequired": { "major": 3, "minor": 29, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "default",
+      "toolchainFile": "cmake/cosmocc.cmake",
+      "binaryDir": "build"
+    }
+  ],
+  "buildPresets": [
+    { "name": "default", "configurePreset": "default" },
+    { "name": "format", "configurePreset": "default", "targets": ["format"] },
+    { "name": "lint", "configurePreset": "default", "targets": ["lint"] },
+    {
+      "name": "generate",
+      "configurePreset": "default",
+      "targets": ["generate"]
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default",
+      "output": { "outputOnFailure": true }
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "default",
+      "steps": [
+        { "type": "configure", "name": "default" },
+        { "type": "build", "name": "default" }
+      ]
+    },
+    {
+      "name": "test",
+      "steps": [
+        { "type": "configure", "name": "default" },
+        { "type": "build", "name": "default" },
+        { "type": "test", "name": "default" }
+      ]
+    },
+    {
+      "name": "format",
+      "steps": [
+        { "type": "configure", "name": "default" },
+        { "type": "build", "name": "format" }
+      ]
+    },
+    {
+      "name": "lint",
+      "steps": [
+        { "type": "configure", "name": "default" },
+        { "type": "build", "name": "lint" }
+      ]
+    },
+    {
+      "name": "generate",
+      "steps": [
+        { "type": "configure", "name": "default" },
+        { "type": "build", "name": "generate" }
+      ]
+    }
+  ]
+}

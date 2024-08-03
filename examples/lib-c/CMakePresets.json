@@ -1,0 +1,38 @@
+{
+  "version": 8,
+  "cmakeMinimumRequired": { "major": 3, "minor": 29, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "default",
+      "binaryDir": "build"
+    }
+  ],
+  "buildPresets": [
+    { "name": "default", "configurePreset": "default" },
+    { "name": "format", "configurePreset": "default", "targets": ["format"] },
+    { "name": "lint", "configurePreset": "default", "targets": ["lint"] }
+  ],
+  "workflowPresets": [
+    {
+      "name": "default",
+      "steps": [
+        { "type": "configure", "name": "default" },
+        { "type": "build", "name": "default" }
+      ]
+    },
+    {
+      "name": "format",
+      "steps": [
+        { "type": "configure", "name": "default" },
+        { "type": "build", "name": "format" }
+      ]
+    },
+    {
+      "name": "lint",
+      "steps": [
+        { "type": "configure", "name": "default" },
+        { "type": "build", "name": "lint" }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,6 @@
-# `cmake-init` - The missing CMake project initializer
+# cmake-init
+
+🌱 The missing CMake project initializer
 
 `cmake-init` is an opinionated CMake project initializer that generates CMake
 projects which are FetchContent ready, separate consumer and developer targets,
@@ -276,3 +278,34 @@ The contents of the directory `cmake-init/templates` are licensed using the
 [26]: https://cppalliance.org/slack/
 [27]: https://github.com/friendlyanon/cmake-init/discussions
 [28]: https://unlicense.org/
+
+```sh
+$ cargo init --help
+Create a new cargo package in an existing directory
+
+Usage: cargo init [OPTIONS] [PATH]
+
+Arguments:
+  [PATH]  [default: .]
+
+Options:
+      --vcs <VCS>            Initialize a new repository for the given version control system, overriding a global configuration. [possible values: git, hg, pijul, fossil, none]
+      --bin                  Use a binary (application) template [default]
+      --lib                  Use a library template
+      --edition <YEAR>       Edition to set for the create generated [possible values: 2015, 2018, 2021, 2024]
+      --name <NAME>          Set the resulting package name, defaults to the directory name
+      --registry <REGISTRY>  Registry to use
+  -v, --verbose...           Use verbose output (-vv very verbose/build.rs output)
+  -q, --quiet                Do not print cargo log messages
+      --color <WHEN>         Coloring: auto, always, never
+      --config <KEY=VALUE>   Override a configuration value
+  -Z <FLAG>                  Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
+  -h, --help                 Print help
+
+Manifest Options:
+      --frozen   Require Cargo.lock and cache are up to date
+      --locked   Require Cargo.lock is up to date
+      --offline  Run without accessing the network
+
+Run `cargo help init` for more detailed information.
+```
